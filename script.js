@@ -24,6 +24,7 @@ fs.readFile('list.txt', 'utf8', (error, data) => {
 class BubbleSort{
 
   sort(array){
+    let count = 0;
     for (let i = 0; i < array.length; i++) {
       for (let j = 0; j < array.length; j++) {
         if (array[j] > array[j + 1]) {
@@ -32,7 +33,8 @@ class BubbleSort{
           array[j + 1] = temp;
         }
       }
+      count++;
     }
-    console.log(array);
+    console.log("Bubble: " + count + " Comparations: " + array);
   }
 }

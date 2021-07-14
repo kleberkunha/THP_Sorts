@@ -25,15 +25,17 @@ fs.readFile('list.txt', 'utf8', (error, data) => {
 class InsertionSort{
 
   sortIn(array){
+    let count = 0;
     for (let i = 1; i < array.length; i++) {
      var current = array[i];
      var j = i - 1;
       while (j >= 0 && array[j] > current){
        array[j + 1] = array[j];
        j--;
+       count++;
       }
      array[j + 1] = current;
     }
-    console.log(array);
+    console.log("Insertion: " + count + " Comparations: " + array);
   }
 }

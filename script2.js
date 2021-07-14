@@ -25,6 +25,7 @@ fs.readFile('list.txt', 'utf8', (error, data) => {
 class SelectionSort{
 
   sortIn(array){
+    let count = 0;
     for (let i = 0; i < array.length; i++) {
       for (let j = i + 1; j < array.length; j++){ // j == 1
         if (array[i] > array[j]){  
@@ -32,8 +33,9 @@ class SelectionSort{
           array[i] = array[j];
           array[j] = temp;
         }
+        count++;
       }
     }
-    console.log(array);
+    console.log("Selection: " + count + " Comparations: " + array);
   }
 }
